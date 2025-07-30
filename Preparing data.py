@@ -73,7 +73,7 @@ def scale_dataset(dataframe, oversample=False):
     if oversample:
         rods = RandomOverSampler()
         X_res, y_res = rods.fit_resample(X, y)  # fit finds the value in (y) that appears the least number of times, resample duplicates random
-                                     # rows of the least appearing value until the len matches the most appearing value, making them equal
+                                                # rows of the least appearing value until the len matches the most appearing value, making them equal
 
     # Combine features and target for convenience
     data = np.hstack((X, np.reshape(y, (-1, 1))))  # np.hstack() takes one argument, a tuple of arrays to stack horizontally
