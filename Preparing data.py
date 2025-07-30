@@ -13,7 +13,9 @@ cols = [
 
 # Load the MAGIC gamma telescope dataset into a pandas DataFrame
 # The data is expected to be in the specified path with columns named as above
-df = pd.read_csv("C:\\Code\\Code\\.Files\\magic04.data", names=cols)
+dir = input("Path to the data file: ")
+dir = dir.replace("\\", "\\\\")
+df = pd.read_csv(dir, names=cols)
 
 # Convert the class column to binary: 1 if 'g' (gamma), 0 otherwise (hadron)
 df["class"] = (df["class"] == 'g').astype(int)
